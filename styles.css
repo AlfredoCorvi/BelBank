@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+}
+
+
+.main-container {
+    display: flex;
+    height: 60vh;
+    width: 99.5vw;
+    color: #ddd;
+}
+
+
+.buttons-div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #3d3d3d;
+}
+
+.buttons-div h1 {
+    margin-bottom: 20px;
+}
+
+.buttons-div button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.image-div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+}
+
+.image-div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#ie{
+    margin-bottom: 45px;
+}
+
+.hola{
+    padding: 100px;
+}
+
+.tit1{
+    font-family: 'Paytone One', serif;
+}
