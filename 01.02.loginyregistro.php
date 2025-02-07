@@ -158,8 +158,8 @@ if (isset($_POST['registrar'])) {
         <form method="POST" action="">
             <h1>Inicia sesión</h1>
             <span>o usa tu cuenta</span><br>
-            <input type="text" name="Correo" placeholder="Correo o No. de cuenta" required />
-            <input type="password" name="contraseña" placeholder="Contraseña" required />
+            <input type="text" name="Correo" placeholder="Correo o No. de cuenta" />
+            <input type="password" name="contraseña" placeholder="Contraseña" />
             <button type="submit" name="login">Iniciar sesión</button>
             <button>
                 <a href="03.activar.php" style="color: white; text-decoration: none;">Activar Cuenta</a>

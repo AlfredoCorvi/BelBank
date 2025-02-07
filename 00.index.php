@@ -12,7 +12,7 @@ require_once "db_conexion.php";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body >
     <header>
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
@@ -26,7 +26,7 @@ require_once "db_conexion.php";
       <div class="container-fluid main-container">
         <div class="buttons-div">
            <div class="container-sm" style="max-width: 520px;">
-              <h1 class="tit1">¡Bienvenido a <span class="bel">BEL</span><span class="bank">BANK</span>!</h1>
+              <h1>¡Bienvenido a <span class="bel">BEL</span><span class="bank">BANK</span>!</h1>
               <h5 class="tit1">A donde tus sueños financieros comienzan a hacerse realidad!
               Tu confianza, nuestro compromiso.<br><br> Únete a nosotros y abre tu cuenta hoy mismo.</h5>
             </div>
