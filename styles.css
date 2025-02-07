@@ -4,18 +4,22 @@
     box-sizing: border-box;
 }
 
-body, html {
-    height: 100%;
+body {
+    overflow-x: hidden;
 }
 
+.container-fluid {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+}
 
 .main-container {
     display: flex;
     height: 60vh;
-    width: 99.5vw;
+    width: 100vw;
     color: #ddd;
 }
-
 
 .buttons-div {
     flex: 1;
@@ -37,7 +41,6 @@ body, html {
     cursor: pointer;
 }
 
-
 .image-div {
     flex: 1;
     display: flex;
@@ -52,14 +55,64 @@ body, html {
     object-fit: cover;
 }
 
-#ie{
+#ie {
     margin-bottom: 45px;
 }
 
-.hola{
+.hola {
     padding: 100px;
 }
 
-.tit1{
+.tit1 {
     font-family: 'Paytone One', serif;
+}
+
+.bel {
+    color: crimson;
+}
+
+.bank {
+    color: rgb(32, 110, 178);
+}
+
+
+.card-icons .icon {
+    font-size: 3rem;
+    color: rgb(32, 110, 178);
+}
+
+.card-text {
+    color: gray;
+}
+
+.card-icons {
+    transition: all 0.5s;
+}
+
+.card-icons:hover {
+    background-color: crimson;
+    color: #fff;
+}
+
+.card-icons:hover .icon,
+.card-icons:hover .card-text {
+    color: #fff;
+}
+
+.navbar {
+    width: 100vw;
+    padding: 0;
+}
+
+.arrow-hover {
+    font-size: 3rem;
+    transition: color 0.3s ease;
+}
+
+.arrow-hover:hover {
+    color: red;
+}
+
+.card:hover{
+    transition: all 0.5s;
 }

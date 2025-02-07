@@ -16,7 +16,7 @@ require_once "db_conexion.php";
     <header>
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand ms-3" href="#">
                     <img src="https://th.bing.com/th/id/OIP.ZwgZsScqAUCrVB5IElNAiAHaEK?w=322&h=181&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
                     BELBANK
                 </a>
@@ -25,73 +25,160 @@ require_once "db_conexion.php";
     </header>
       <div class="container-fluid main-container">
         <div class="buttons-div">
-              <h1 class="tit1">¡Bienvenido a BELBANK!</h1>
-              <h3 class="tit1">Tu banco de confianza</h3>
-              <a class="btn btn-primary" href="01.login.php">Iniciar Sesión</a>
-              <a class="btn btn-primary" href="02.registro.php">Registrarse</a>
-              <style>
-                  .buttons-div .btn{
-                      width: 130px;
-                  }
-              </style>
-          </div>
+           <div class="container-sm" style="max-width: 520px;">
+              <h1 class="tit1">¡Bienvenido a <span class="bel">BEL</span><span class="bank">BANK</span>!</h1>
+              <h5 class="tit1">A donde tus sueños financieros comienzan a hacerse realidad!
+              Tu confianza, nuestro compromiso.<br><br> Únete a nosotros y abre tu cuenta hoy mismo.</h5>
+            </div>
+            <a class="btn btn-outline-light" href="01.login.php" >Abre tu cuenta</a>
+        </div>
           <div class="image-div">
               <img src="https://img.caminofinancial.com/wp-content/uploads/2018/12/19001416/iStock-9638143721-1024x683.jpg" alt="Imagen">
           </div>
       </div>
 
+    <!---->
+    <div class="container mt-4">
+  <div class="row row-cols-1 row-cols-md-5 g-4">
+    <div class="col">
+      <div class="card-icons text-center border-0 shadow rounded-0 p-4" style="max-width: 22rem;">
+        <div class="icon">
+          <i class="bi bi-phone"></i>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title fw-bold">BelMóvil</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card-icons text-center border-0 shadow rounded-0 p-4" style="max-width: 22rem;">
+        <div class="icon">
+          <i class="bi bi-pc-display"></i>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title fw-bold">BelWeb</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card-icons text-center border-0 shadow rounded-0 p-4" style="max-width: 22rem;">
+        <div class="icon">
+          <i class="bi bi-cash-coin"></i>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title fw-bold">Cajeros</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card-icons text-center border-0 shadow rounded-0 p-4" style="max-width: 22rem;">
+        <div class="icon">
+          <i class="bi bi-buildings"></i>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title fw-bold">Sucursales</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card-icons text-center border-0 shadow rounded-0 p-4" style="max-width: 22rem;">
+        <div class="icon">
+          <i class="bi bi-info-circle"></i>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title fw-bold">Ayuda</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!---->
+
+
     <div class="container mt-5 d-none d-md-block">
         <div class="row">
             <div class="col-md-4">
                 <div class="card border-0 ">
-                    <img src="images/card-1.jpg" class="card-img-top rounded-circle" alt="...">
+                    <img src="images/card-1.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Tarjetas de crédito BELBANK</h5>
                       <p class="card-text">Solicita la tarjeta que te da meses sin intereses y pagos fijos.</p>
-                      <a href="#" class="btn btn-primary">CONOCE MÁS</a>
+                      <a href="#" class="btn-icon">
+                        <i class="bi bi-arrow-right-square fs-1 arrow-hover"></i>
+                      </a>
                     </div>
                   </div>
             </div>
             <div class="col-md-4">
                 <div class="card border-0 ">
-                    <img src="images/card-2.jpg" class="card-img-top rounded-circle" alt="...">
+                    <img src="images/card-2.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Tarjetas adicionales</h5>
                       <p class="card-text">Extiende los beneficios de ser parte de la familia BELBANK.</p>
-                      <a href="#" class="btn btn-primary">ME INTERESA</a>
+                      <a href="#" class="btn-icon">
+                        <i class="bi bi-arrow-right-square fs-1 arrow-hover"></i>
+                      </a>                    
                     </div>
                   </div>
             </div>
             <div class="col-md-4">
                 <div class="card border-0 ">
-                    <img src="images/card-3.jpg" class="card-img-top rounded-circle" alt="...">
+                    <img src="images/card-3.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Trae tu nómina y disftruta beneficios</h5>
                       <p class="card-text">Te bonificamos la comisión por administración de tu tarjeta de crédito cada año.</p>
-                      <a href="#" class="btn btn-primary">CONOCE MÁS</a>
+                      <a href="#" class="btn-icon">
+                        <i class="bi bi-arrow-right-square fs-1 arrow-hover"></i>
+                      </a>                    
                     </div>
                   </div>
             </div>
         </div>
       </div>
-
-      <div class="container mt-5">
-        <div class="card mb-3 border-0">
-            <div class="row g-0">
-              <div class="col-md-5">
-                <img src="images/slider-3.jpg" class="img-fluid rounded-start" alt="...">
+      <!--otros 3-->
+      <div class="container mt-5 d-none d-md-block">
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="card border-0 ">
+                      <img src="https://image.freepik.com/foto-gratis/mujer-con-telefono-movil-en-las-manos-las-personas-que-usan-el-concepto-de-dispositivo_8353-6421.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Cambia tu nómina hpy desde la App BelBank Movil</h5>
+                        <p class="card-text">Obtén un seguro por muerte accidental, asistencias sin costo, 
+                          condiciones preferenciales en préstamos y créditos y mucho más.</p>
+                        <a href="#" class="btn-icon">
+                        <i class="bi bi-arrow-right-square fs-1 arrow-hover"></i>
+                      </a>                      
+                    </div>
+                    </div>
               </div>
-              <div class="col-md-7">
-                <div class="card-body">
-                  <h2 class="card-title">Crea tu bolsa de ahorro fácil</h2>
-                  <p class="card-text">Empieza a ahorrar de manera sencilla y descubre cómo tu dinero puede crecer rápidamente. 
-                    Solo regístrate, participa y comprueba que ahorrar siempre tiene recompensa. ¡Haz que tu dinero trabaje para ti!</p>
-                  <div class="text-center"><a href="#" class="btn btn-danger btn-lg">ADELANTE</a></div>
-                </div>
+              <div class="col-md-4">
+                  <div class="card border-0 ">
+                      <img src="https://th.bing.com/th/id/OIP.Yl1nPeo9Hh2lz0MnvaV1wAHaE7?rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Transfiere, retira sin tarjeta, paga tus servicios, compra seguro y más</h5>
+                        <p class="card-text">Descubre todas las funcionalidades de tu ScotiaMóvil y échate el banco a la bolsa.</p>
+                        <a href="#" class="btn-icon">
+                        <i class="bi bi-arrow-right-square fs-1 arrow-hover"></i>
+                      </a>                      
+                    </div>
+                    </div>
               </div>
-            </div>
+              <div class="col-md-4">
+                  <div class="card border-0 ">
+                      <img src="https://image.freepik.com/foto-gratis/manos-mujer-sosteniendo-usando-telefono-celular_38716-128.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Ábrela en minutos desde la app ScotiaMóvil</h5>
+                        <p class="card-text">Realiza transferencias en corto y paga tus servicios </p>
+                        <a href="#" class="btn-icon">
+                        <i class="bi bi-arrow-right-square fs-1 arrow-hover"></i>
+                      </a>                      
+                    </div>
+                    </div>
+              </div>
           </div>
-      </div>
+        </div>
 
       <div id="ie" class="container mt-5">
         <div class="card mb-3 border-0">
@@ -101,8 +188,12 @@ require_once "db_conexion.php";
                 <div class="card-body">
                   <h2 class="card-title">¡Gana un auto con tu tarjeta de nómina!</h2>
                   <p class="card-text">Regístrate de forma sencilla y comienza a hacer tus compras con tu tarjeta de nómina. 
-                    Cada compra te convierte automáticamente en participante para ganar un auto. Sin costos adicionales ni trámites complicados: 
-                    solo usa tu tarjeta como siempre y aumenta tus posibilidades de llevarte el gran premio.</p>
+                    Cada compra te convierte automáticamente en participante para ganar un auto. 
+                    Sin costos adicionales ni trámites complicados: 
+                    solo usa tu tarjeta como siempre y aumenta tus posibilidades de llevarte el gran premio. <br><br> 
+                    Además, mientras más uses tu tarjeta, más oportunidades tendrás de ganar, 
+                    ¡así que no dejes pasar ni una compra! No importa si es para tu día a día o algo especial, cada gasto cuenta. 
+                    ¿Qué esperas para comenzar a participar y acercarte a tu nuevo auto?</p>
                   <div class="text-center"><a href="#" class="btn btn-danger btn-lg">ME INTERESA</a></div>
                 </div>
               </div>
