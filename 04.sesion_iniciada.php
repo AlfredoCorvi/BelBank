@@ -60,7 +60,7 @@ if (isset($_POST['logout'])) {
             overflow: hidden;
         }
         .card-header {
-            background-color: #007bff;
+            background-color: #FF4B2B;
             color: white;
             text-align: center;
             font-size: 1.5rem;
@@ -71,7 +71,7 @@ if (isset($_POST['logout'])) {
         }
     </style>
 </head>
-<body style="background:url(images/fondo.png); background-size: cover; font-family: 'Poppins';">
+<body style="background:url(https://www.dutchcowboys.nl/wp-content/uploads/headers/telco-singtel-aandeel-singapore.jpg); background-size: cover; font-family: 'Poppins';">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">

@@ -33,7 +33,7 @@ if (isset($_POST['desactivar'])) {
     <!-- Toastr CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 </head>
-<body style="background:url(images/fondo.png); background-size: cover; font-family: 'Poppins';">
+<body style="background:url(https://www.dutchcowboys.nl/wp-content/uploads/headers/telco-singtel-aandeel-singapore.jpg); background-size: cover; font-family: 'Poppins';">
 
 <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">

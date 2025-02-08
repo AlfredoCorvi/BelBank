@@ -56,25 +56,20 @@ if (isset($_POST['activar'])) {
     <!-- Toastr CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 </head>
-<body style="background:url(images/fondo.png); background-size: cover; font-family: 'Poppins';">
+<body style="'Montserrat', sans-serif;">
 
 <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand ms-3" href="00.index.php">
             <img src="https://th.bing.com/th/id/OIP.ZwgZsScqAUCrVB5IElNAiAHaEK?w=322&h=181&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
             BELBANK
         </a>
-        <div class="btn-hdr">
-            <a class="btn btn-primary" href="00.index.php" role="button">Inicio</a>
-            <a class="btn btn-primary" href="01.login.php" role="button">iniciar Sesion</a>
-            <a class="btn btn-primary" href="02.registro.php" role="button">Registrar</a>
-        </div>
     </div>
 </nav>
 
-<div class="container d-flex justify-content-center align-items-center" style="min-height: 10vh; margin-top: 2cm;">
-    <div class="card h-100" style="width: 35rem;">
-        <div class="card-header" style="height: 50px; background-color:blue;">
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 10vh; margin-top: 35px; width: 350px;">
+    <div class="card h-100" style="width: 35rem;" id="container-master">
+        <div class="card-header" style="height: 50px; background-color:crimson;">
             <h3 style="text-align: center; color: white;">Activar Cuenta</h3>
         </div>
         <div class="card-body" style="display: flex; flex-direction: column; justify-content: space-between;">
@@ -96,9 +91,57 @@ if (isset($_POST['activar'])) {
                     <input type="password" name="contraseña" class="form-control" placeholder="Contraseña">
                 </div>
                 <br>
-                <button type="submit" name="activar" class="btn btn-primary">Activar</button>
-                <a href="02.registro.php" class="btn btn-primary"> Registrarse</a>
-                <a href="01.login.php" class="btn btn-primary"> Iniciar Sesión</a>
+                <button type="submit" name="activar">Activar</button>
+                <button>
+                    <a href="01.02.loginyregistro.php">Iniciar Sesión</a>
+                </button>
+                <style>
+                    button {
+                        border-radius: 20px;
+                        border: 1px solid #FF4B2B;
+                        background-color: #FF4B2B;
+                        color: #FFFFFF;
+                        font-size: 14px;
+                        font-weight: bold;
+                        padding: 12px 45px;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                        transition: transform 80ms ease-in;
+                        width: 100%;
+                        margin-bottom: 10px;
+                    }
+
+                    button:active {
+                        transform: scale(0.95);
+                    }
+
+                    button:focus {
+                        outline: none;
+                    }
+
+                    button.ghost {
+                        background-color: transparent;
+                        border-color: #FFFFFF;
+                    }
+
+                    a {
+                        color: #fff;
+                        font-size: 14px;
+                        text-decoration: none;
+                        margin: 15px 0;
+                    }
+
+                    #container-master {
+                        background-color: #fff;
+                        border-radius: 10px;
+                        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+                                0 10px 10px rgba(0,0,0,0.22);
+                    }
+
+                    h3{
+                        font-weight: bold;
+                    }
+                </style>
             </form>
         </div>
     </div>

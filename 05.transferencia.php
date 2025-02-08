@@ -11,13 +11,70 @@ if (!isset($_SESSION['usuario'])) {
 $usuarioData = $_SESSION['usuario'];
 
 // Procesar la transferencia
+$mensaje = "";
 if (isset($_POST['transferir'])) {
-    $cuentaDestino = $_POST['cuenta_destino'];
-    $monto = floatval($_POST['monto']); // Convertir a número
-    $concepto = $_POST['concepto'];
-    $contrasena = $_POST['contrasena']; // Obtener la contraseña
+    $cuentaDestino = trim($_POST['cuenta_destino']);
+    $monto = floatval($_POST['monto']);
+    $concepto = trim($_POST['concepto']);
+    $contrasena = $_POST['contrasena'];
 
-    // Validaciones y proceso de transferencia
+    try {
+        // Verificar que los campos no estén vacíos
+        if (empty($cuentaDestino) || empty($monto) || empty($concepto) || empty($contrasena)) {
+            $mensaje = "Todos los campos son obligatorios.";
+        } elseif ($monto <= 0) {
+            $mensaje = "El monto debe ser mayor a cero.";
+        } else {
+            // Verificar la contraseña del usuario
+            $sql = $cnnPDO->prepare("SELECT * FROM usuarios WHERE cuenta = :cuenta AND contrasena = :contrasena");
+            $sql->bindParam(':cuenta', $usuarioData['cuenta']);
+            $sql->bindParam(':contrasena', $contrasena);
+            $sql->execute();
+            $usuario = $sql->fetch(PDO::FETCH_ASSOC);
+
+            if (!$usuario) {
+                $mensaje = "Contraseña incorrecta.";
+            } else {
+                // Verificar saldo suficiente
+                if ($usuario['saldo'] < $monto) {
+                    $mensaje = "Saldo insuficiente.";
+                } else {
+                    // Registrar la transacción
+                    $cnnPDO->beginTransaction();
+
+                    // Restar el monto de la cuenta origen
+                    $sql = $cnnPDO->prepare("UPDATE usuarios SET saldo = saldo - :monto WHERE cuenta = :cuenta");
+                    $sql->bindParam(':monto', $monto);
+                    $sql->bindParam(':cuenta', $usuarioData['cuenta']);
+                    $sql->execute();
+
+                    // Sumar el monto a la cuenta destino
+                    $sql = $cnnPDO->prepare("UPDATE usuarios SET saldo = saldo + :monto WHERE cuenta = :cuenta");
+                    $sql->bindParam(':monto', $monto);
+                    $sql->bindParam(':cuenta', $cuentaDestino);
+                    $sql->execute();
+
+                    // Registrar la transacción en la tabla `transacciones`
+                    $sql = $cnnPDO->prepare(
+                        "INSERT INTO transacciones (cuenta_origen, cuenta_destino, monto, concepto, fecha) 
+                         VALUES (:cuenta_origen, :cuenta_destino, :monto, :concepto, NOW())"
+                    );
+                    $sql->bindParam(':cuenta_origen', $usuarioData['cuenta']);
+                    $sql->bindParam(':cuenta_destino', $cuentaDestino);
+                    $sql->bindParam(':monto', $monto);
+                    $sql->bindParam(':concepto', $concepto);
+                    $sql->execute();
+
+                    $cnnPDO->commit();
+
+                    $mensaje = "Transferencia realizada con éxito.";
+                }
+            }
+        }
+    } catch (Exception $e) {
+        $cnnPDO->rollBack();
+        $mensaje = "Error al realizar la transferencia: " . $e->getMessage();
+    }
 }
 
 // Obtener el historial de transacciones
@@ -38,7 +95,7 @@ $transacciones = $sql->fetchAll(PDO::FETCH_ASSOC);
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         body {
-            background: url(images/fondo.png); 
+            background: url(https://www.dutchcowboys.nl/wp-content/uploads/headers/telco-singtel-aandeel-singapore.jpg); 
             background-size: cover; 
             font-family: 'Poppins';
         }
@@ -95,8 +152,8 @@ $transacciones = $sql->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 <div class="container mt-5">
-    <h3>Historial de Transacciones</h3>
-    <table class="table table-bordered table-striped">
+    <h3 style="color: white;">Historial de Transacciones</h3>
+    <table class="table table-bordered table-striped mg-3">
         <thead class="bg-dark text-white">
             <tr>
                 <th>Fecha</th>
